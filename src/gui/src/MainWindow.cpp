@@ -272,10 +272,10 @@ void MainWindow::createTrayIcon()
 void MainWindow::retranslateMenuBar()
 {
     main_menu_->setTitle(tr("&InputLeap")); // Default Menu name for OS's other then macOS TEST
-
-        #if defined(Q_OS_MAC)
-            {main_menu_->setTitle(tr("&Settings"));} // test code to switch name of menu item if macOS is detected
-    
+ #if defined(Q_OS_MAC)
+        {main_menu_->setTitle(tr("&Settings")); // Rename menu to Settings on macOS macOS TEST}
+#endif
+                
     m_pMenuHelp->setTitle(tr("&Help"));
 }
 

@@ -271,7 +271,11 @@ void MainWindow::createTrayIcon()
 
 void MainWindow::retranslateMenuBar()
 {
-    main_menu_->setTitle(tr("&InputLeap-macOS-Name-Change-Test")); // this might be the source of the double InputLeap in the menu. Make an if to detect if macOS is the build target and change the title maybe?
+    main_menu_->setTitle(tr("&InputLeap")); // Default Menu name for OS's other then macOS TEST
+
+        #if defined(Q_OS_MAC)
+            {main_menu_->setTitle(tr("&Settings"));} // test code to switch name of menu item if macOS is detected
+    
     m_pMenuHelp->setTitle(tr("&Help"));
 }
 
